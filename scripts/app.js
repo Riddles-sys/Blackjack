@@ -27,7 +27,6 @@ function init() {
   const suit = ['Spades', 'Clubs', 'Diamonds', 'Hearts']
   const lose = 'Game over. You lose'
   let sum = 0
-  let blackJack = false
   let hand = []
   let sDeck = []
   let deck = []
@@ -87,8 +86,8 @@ function init() {
     // first hand are the two first elements of sDeck
     hand = [sDeck[0], sDeck[1]]
     // removes the cards that are in the hand from the card in the deck
-    sDeck.splice(0, 2)
     // remove first two elements so they can't be picked
+    sDeck.splice(0, 2)
     console.log('hand2', hand)
     console.log('sliced deck', sDeck)
   }
@@ -98,7 +97,9 @@ function init() {
       // for each element in hand
       const card = hand[i]
       // insert new div with template and literals
-      const template = `<div classname='winner__card' style='width:300px; height: 400px; border: 3px solid black; margin: 15px; padding: 10px; background: rgba(0, 0, 0, 0.2); box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); color: #FAE8AA; background-color: #d12d36'>${card.Value} of ${card.Suit}</div>`
+      const template = `<div classname='winner__card' style='width:300px; height: 400px; border: 3px solid black; 
+      margin: 15px; padding: 10px; background: rgba(0, 0, 0, 0.2); box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+      color: #FAE8AA; background-color: #d12d36'>${card.Value} of ${card.Suit}</div>`
       wins.innerHTML += template
     }
     sumOf()
@@ -120,10 +121,10 @@ function init() {
         let aceValue = window.prompt('Enter the value of Ace as: 1 or 11')
         if (aceValue === '1' || (aceValue === '11' && aceValueSet === false)) {
           sum += parseInt(aceValue)
-          // ! This doesn't work properly as when a new card is added, aceValue has already been set we can't set the value again.
+          // ! This doesn't work properly as when a new round takes place, the aceCard is recounted and the user asked for input AGAIN
           aceValueSet = true
           // this is to ensure that the answer picked by the user is 1 or 11
-        } else if (aceValue != '1' || aceValue != '11') {
+        } else if (aceValue !== '1' || aceValue !== '11') {
           // aceValueSet
           let aceValue = window.prompt('You can only pick 1 or 11')
           sum += parseInt(aceValue)
@@ -141,7 +142,7 @@ function init() {
 
   // adding a new random card
   function addCard() {
-    let randomCard = Math.floor(Math.random() * 50)
+    let randomCard = Math.floor(Math.random() * sDeck.length)
     hand.push(sDeck[randomCard])
     // removes the random card from the shuffled deck.
     sDeck.splice(0, 1)
@@ -169,7 +170,6 @@ function init() {
       playerCard.innerHTML = `Your Current Score: ${sum}`
     } else if (sum === 21) {
       gameNotification.innerHTML += 'You have Blackjack!'
-      blackJack = true
     } else if (sum > 21) {
       playerCard.innerHTML = ''
       gameOver()
@@ -181,7 +181,9 @@ function init() {
   function standResult() {
     if (sum <= 21) {
       wins.innerHTML = ''
-      validTemplate = `<div class='game__over' style='width:auto; height: 300px; border: 3px solid black; margin: 15px; padding: 5px; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);'>Your hand is valid <br> Your total score was ${sum}<div>`
+      validTemplate = `<div class='game__over' style='width:auto; height: 300px; border: 3px solid black; 
+      margin: 15px; padding: 5px; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);'>
+      Your hand is valid <br> Your total score was ${sum}<div>`
       gameNotification.innerHTML += validTemplate
     } else {
       gameOver()
@@ -211,7 +213,7 @@ function init() {
       firstHand()
       display()
       total()
-    })
+    }, 200)
   }
 
   function gameOver() {
@@ -233,7 +235,7 @@ function init() {
 
   //* Jest export
 
-  module.exports = { deckOfCards, firstHand }
+  exports = { deckOfCards, firstHand }
 }
 
 window.addEventListener('DOMContentLoaded', init)
