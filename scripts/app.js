@@ -1,5 +1,4 @@
 function init() {
-  
   // ! Elements
   const playerCard = document.querySelector('.game__scores-player')
   const startButton = document.querySelector('#startBtn')
@@ -169,7 +168,7 @@ function init() {
     if (sum <= 20) {
       playerCard.innerHTML = `Your Current Score: ${sum}`
     } else if (sum === 21) {
-      gameNotification.innerHTML += `You have Blackjack!`
+      gameNotification.innerHTML += 'You have Blackjack!'
       blackJack = true
     } else if (sum > 21) {
       playerCard.innerHTML = ''
@@ -231,6 +230,10 @@ function init() {
     loseTemplate = `<div class='game__over' style='width:auto; height: 400px; border: 3px solid black; margin: 15px; padding: 10px; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); background-color: #FAE8AA; display: flex; flex-direction: column; justify-content: center'>${lose} <br> Your total score was: ${sum}<div>`
     gameNotification.innerHTML += loseTemplate
   }
+
+  //* Jest export
+
+  module.exports = { deckOfCards, firstHand }
 }
 
 window.addEventListener('DOMContentLoaded', init)
