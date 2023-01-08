@@ -147,11 +147,18 @@ For a few days I was stuck on the function to create a deck and to shuffle it. T
 
 ### Two:
 
-It was difficult to understand how I can use Jest in vanilla JS. I kept receiving the error below and had to read documentation and research on how to fix this issue, but I believe I had done so as can be seen in the images below:
+It was difficult to understand how I can use Jest in vanilla JS. I kept receiving the error below and had to read documentation and research on how to fix this issue:
 
 
 ![jest-error](https://user-images.githubusercontent.com/102864650/211224911-4a3cbb02-3662-4983-941e-653134bd5017.png)
 ##### _Fig.14: Jest error_
+
+I fixed this error by installing jsdom, adding the environment into the package.json and also tested if it was working by checking that window is no longer null.
+
+
+![text-fix](https://user-images.githubusercontent.com/102864650/211225163-ed7e5adf-1360-4515-93a1-18b174b2e2e9.png)
+##### _Fig.15: Jest error fix_
+
 
 ### Three:
 
