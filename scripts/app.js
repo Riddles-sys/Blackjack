@@ -1,6 +1,5 @@
 function init() {
-  // import cardsDisplay from './cards'
-
+  
   // ! Elements
   const playerCard = document.querySelector('.game__scores-player')
   const startButton = document.querySelector('#startBtn')
