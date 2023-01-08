@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+* {
+  font-family: 'Rye', cursive, sans-serif;
+  font-size: 1.7rem;
+  color: black;
+  overflow: none;
+}
+
+body {
+  background-image: url('../images/casino.jpg');
+  background-repeat: none;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.game__btns {
+  display: flex;
+}
+
+.btn {
+  justify-content: space-between;
+  margin: 5px;
+  font-family: Roboto, sans-serif;
+  font-weight: 0;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2a9d8f99;
+  padding: 10px 30px;
+  border: solid #2a9d8f 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 50px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transition: 1000ms;
+  padding: 10px 50px;
+  transform: translateY(-0px);
+  background-color: #fff;
+  color: #0066cc;
+  border: solid 2px #0066cc;
+}
+
+.btn:disabled {
+  background-color: grey;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  text-align: center;
+  color: #fae8aa;
+}
+
+li {
+  color: #fae8aa;
+  font-weight: 200;
+  list-style: none;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__scores {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.game__over {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+#winner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blackjack - 21</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link href="http://fonts.googleapis.com/css?family=Exo+2:400,300,200,900,700,600,500" rel="stylesheet"
+    type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <!-- <script src="./scripts/app.js"></script> -->
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1 class="title">Blackjack</h1>
+      <div class="game">
+        <h2 class="game__noti">Rules<ul>
+            <li>Value of Ace is either 1 or 11</li>
+            <li>Number cards are as value</li>
+            <li>Face cards are worth 10</li>
+            <li>Try to get a total value of 21 to get Blackjack</li>
+            <li>'Hit Me' adds another random card from the deck</li>
+            <li>'Stand' if you don't want to risk losing with a valid hand</li>
+          </ul>
+        </h2>
+        <div class="game__scores">
+          <!-- Winner shows here -->
+          <div id="winner"></div>
+          <!-- Insert HTML -->
+          <div class="game__scores-player"></div>
+          <div class="game__scores-comp"></div>
+        </div>
+        <div class="game__btns">
+          <button class="btn" id="startBtn">Start</button>
+          <button class="btn" id="randomBtn">Hit Me</button>
+          <button class="btn" id="endGameBtn">Stand</button>
+          <button class="btn" id="restartBtn">Restart</button>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script src="./scripts/app.js" charset="utf-8"></script>
+
+</body>
+
+</html>
