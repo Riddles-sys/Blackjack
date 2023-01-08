@@ -6,6 +6,7 @@ Blackjack game created with Vanilla JavaScript.
 
 ## Deployment link
 
+https://riddles-sys.github.io/Blackjack-vJS/
 
 ![preview-blackj](https://user-images.githubusercontent.com/102864650/211224492-a0b97226-a12a-4bb9-a326-7d96adc01f00.png)
 ##### _Project Preview_
