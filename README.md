@@ -68,8 +68,7 @@ I then split my app.js into three sections within a function init:
 2. Variables - that I will be using for the application
 3. Events - that will take place during initialization.
 
-
-![functioninit](https://user-images.githubusercontent.com/102864650/211224602-ec10fb36-5187-4ce1-b04b-b0c30b5d5ee6.png)
+![init](https://user-images.githubusercontent.com/102864650/211225372-e754d7ef-62d6-4c7d-b53f-e814d159e30d.png)
 ##### _Fig.4: Function init_
 
 ### Phase Two
